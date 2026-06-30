@@ -1,0 +1,53 @@
+app:
+  token-blacklist: memory
+
+spring:
+  application:
+    name: attendance-api
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:attendance_db}
+    username: ${DB_USER:dev_user}
+    password: ${DB_PASS:Dev@2026#}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: false
+    ignore-migration-patterns: '*:ignored'
+
+  data:
+    web:
+      pageable:
+        page-serialization-mode: via-dto
+
+  docker:
+    compose:
+      enabled: false
+
+server:
+  port: 8080
+
+qr:
+  hmac-secret: ${QR_HMAC_SECRET:change-me-qr-hmac-secret-32-chars-min!!}
+  session-ttl-minutes: 60
+
+jwt:
+  secret: ${JWT_SECRET:your-256-bit-secret-key-here-make-it-long}
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+nara-router:
+  base-url: https://router.bynara.id/v1
+  api-key: ${NARA_ROUTER_API_KEY:}
+  model: ${NARA_ROUTER_MODEL:mimo-v2.5-free}

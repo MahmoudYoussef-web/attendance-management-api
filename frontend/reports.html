@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reports — Attendance Management</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo">A</div><span class="sidebar-title">AttendPro</span></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-label">Main</div>
+        <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+        <a href="employees.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Employees</a>
+        <a href="attendance.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>Attendance</a>
+        <a href="leaves.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>Leaves<span class="nav-badge">2</span></a>
+        <div class="sidebar-section-label">Management</div>
+        <a href="qr-sessions.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>QR Sessions</a><a href="qr-scanner.html" class="nav-item emp-only" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>QR Check-in</a>
+        <a href="reports.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>Reports</a>
+        <a href="departments.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Departments</a><a href="users.html" class="nav-item admin-only" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Users</a>
+        <div class="sidebar-section-label">Account</div>
+        <a href="settings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      </nav>
+      <div class="sidebar-footer"><a href="#" onclick="AuthAPI.logout(); return false;" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>Logout</a></div>
+    </aside>
+
+    <div class="main-area">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="sidebar-toggle sidebar-toggle-mobile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/></svg></button>
+          <button class="sidebar-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" x2="15" y1="3" y2="3"/></svg></button>
+          <span class="page-title">Reports</span>
+        </div>
+        <div class="header-right">
+          <div style="position:relative;"><button class="bell-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="bell-badge">3</span></button></div>
+          <div class="user-avatar">AU</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+
+        <div class="tabs">
+          <button class="tab active" data-tab="daily" onclick="switchReportTab('daily')">Daily</button>
+          <button class="tab" data-tab="monthly" onclick="switchReportTab('monthly')">Monthly</button>
+          <button class="tab" data-tab="late" onclick="switchReportTab('late')">Late Arrivals</button>
+          <button class="tab" data-tab="absences" onclick="switchReportTab('absences')">Absences</button>
+          <button class="tab" data-tab="dept" onclick="switchReportTab('dept')">Department Stats</button>
+        </div>
+
+        <div class="filters-bar">
+          <input class="filter-date" type="date" value="2026-06-01" />
+          <span style="color:var(--muted);font-size:13px;">to</span>
+          <input class="filter-date" type="date" value="2026-06-28" />
+          <button class="btn btn-sm btn-ghost" onclick="generateReport()">Generate Report</button>
+          <button class="btn btn-sm btn-ghost" onclick="showToast('Report exported as CSV','success')">Export CSV</button>
+        </div>
+
+        <div data-panel="daily">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Daily Attendance Report — Jun 28, 2026</span></div>
+            <div class="card-body" style="padding:0;">
+              <div class="data-table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Employee</th><th>Department</th><th>Check-in</th><th>Status</th><th>Notes</th></tr></thead>
+                  <tbody id="dailyTbody" style="display:none">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-panel="monthly" style="display:none;">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Monthly Summary — June 2026</span></div>
+            <div class="card-body">
+              <div class="kpi-grid">
+                <div class="kpi-card"><div class="kpi-label">Working Days</div><div class="kpi-value" style="color:var(--primary);">22</div></div>
+                <div class="kpi-card"><div class="kpi-label">Avg Attendance</div><div class="kpi-value" style="color:var(--success);">87%</div></div>
+                <div class="kpi-card"><div class="kpi-label">Total Late</div><div class="kpi-value" style="color:var(--warn);">14</div></div>
+                <div class="kpi-card"><div class="kpi-label">Total Absences</div><div class="kpi-value" style="color:var(--danger);">5</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-panel="late" style="display:none;">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Late Arrivals — June 2026</span></div>
+            <div class="card-body" style="padding:0;">
+              <div class="data-table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Employee</th><th>Late Count</th><th>Avg Check-in</th><th>Worst</th></tr></thead>
+                  <tbody id="lateTbody" style="display:none">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-panel="absences" style="display:none;">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Absences — June 2026</span></div>
+            <div class="card-body" style="padding:0;">
+              <div class="data-table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Employee</th><th>Date</th><th>Reason</th><th>Status</th></tr></thead>
+                  <tbody id="absencesTbody" style="display:none">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-panel="dept" style="display:none;">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Department Attendance Stats — June</span></div>
+            <div class="card-body">
+              <div class="bar-chart">
+                <div class="bar-row"><span class="bar-label">Engineering</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--primary);"></div></div><span class="bar-value">78%</span></div>
+                <div class="bar-row"><span class="bar-label">Marketing</span><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--accent);"></div></div><span class="bar-value">88%</span></div>
+                <div class="bar-row"><span class="bar-label">HR</span><div class="bar-track"><div class="bar-fill" style="width:95%;"></div></div><span class="bar-value">95%</span></div>
+                <div class="bar-row"><span class="bar-label">Finance</span><div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--warn);"></div></div><span class="bar-value">82%</span></div>
+                <div class="bar-row"><span class="bar-label">Operations</span><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--info);"></div></div><span class="bar-value">70%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/api/client.js"></script>
+  <script src="js/api/auth.js"></script>
+  <script>
+    function switchReportTab(tab) {
+      var tabs = document.querySelectorAll('.tabs .tab');
+      tabs.forEach(function(t){t.classList.remove('active')});
+      tabs.forEach(function(t){if(t.getAttribute('data-tab') === tab) t.classList.add('active')});
+      var panels = document.querySelectorAll('[data-panel]');
+      panels.forEach(function(p){p.style.display = 'none'});
+      var panel = document.querySelector('[data-panel="' + tab + '"]');
+      if (panel) panel.style.display = '';
+      loadTab(tab);
+    }
+
+    function todayStr() {
+      var d = new Date();
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    }
+
+    function monthStartStr() {
+      var d = new Date();
+      return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-01';
+    }
+
+    function generateReport() {
+      var activeTab = document.querySelector('.tabs .tab.active');
+      if (activeTab) loadTab(activeTab.getAttribute('data-tab'));
+      showToast('Report refreshed', 'success');
+    }
+
+    function loadTab(tab) {
+      var filterDates = document.querySelectorAll('.filters-bar input[type="date"]');
+      var from = filterDates[0] ? filterDates[0].value || monthStartStr() : monthStartStr();
+      var to = filterDates[1] ? filterDates[1].value || todayStr() : todayStr();
+      if (tab === 'daily') loadDaily(from);
+      else if (tab === 'monthly') loadMonthly(from, to);
+      else if (tab === 'late') loadLateArrivals(from, to);
+      else if (tab === 'absences') loadAbsences(from, to);
+      else if (tab === 'dept') loadDeptStats(from, to);
+    }
+
+    function loadDaily(date) {
+      window.API.get('/api/reports/daily?date=' + date + '&page=0&size=50').then(function (data) {
+        var panel = document.querySelector('[data-panel="daily"]');
+        if (!panel) return;
+        var list = data.content || [];
+        var tbody = document.getElementById('dailyTbody');
+        if (!tbody) return;
+        tbody.style.display = '';
+        if (list.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:var(--space-xl);">No records for this date</td></tr>';
+          return;
+        }
+        tbody.innerHTML = list.map(function (r) {
+          var initials = (r.employeeName || '').split(' ').map(function(p){return p[0]}).join('').slice(0,2).toUpperCase();
+          var checkIn = r.checkInTime ? r.checkInTime.substring(11, 16) : '—';
+          return '<tr><td><div class="emp-cell"><span class="emp-avatar">' + initials +
+            '</span><div><div class="emp-name">' + escapeHtml(r.employeeName || '') + '</div></div></div></td>' +
+            '<td>' + escapeHtml(r.departmentName || '') + '</td>' +
+            '<td>' + checkIn + '</td>' +
+            '<td>' + (r.status ? badgeHTML(r.status, r.status) : '') + '</td>' +
+            '<td style="color:var(--muted);">—</td></tr>';
+        }).join('');
+      }).catch(function () {});
+    }
+
+    function loadMonthly(from, to) {
+      window.API.get('/api/reports/monthly?start=' + from + '&end=' + to + '&page=0&size=50').then(function (data) {
+        var panel = document.querySelector('[data-panel="monthly"]');
+        if (!panel) return;
+        var list = data.content || [];
+        var card = panel.querySelector('.card-body');
+        if (!card) return;
+        if (list.length === 0) {
+          card.innerHTML = '<div style="text-align:center;color:var(--muted);padding:var(--space-xl);">No data for this period</div>';
+          return;
+        }
+        var totalPresent = 0, totalLate = 0, totalAbsent = 0, totalOnLeave = 0;
+        list.forEach(function (r) {
+          totalPresent += r.present || 0;
+          totalLate += r.late || 0;
+          totalAbsent += r.absent || 0;
+          totalOnLeave += r.onLeave || 0;
+        });
+        var total = totalPresent + totalLate + totalAbsent + totalOnLeave;
+        var pct = total > 0 ? Math.round((totalPresent / total) * 100) : 0;
+        card.innerHTML = '<div class="kpi-grid">' +
+          '<div class="kpi-card"><div class="kpi-label">Present</div><div class="kpi-value" style="color:var(--success);">' + totalPresent + '</div></div>' +
+          '<div class="kpi-card"><div class="kpi-label">Late</div><div class="kpi-value" style="color:var(--warn);">' + totalLate + '</div></div>' +
+          '<div class="kpi-card"><div class="kpi-label">Absent</div><div class="kpi-value" style="color:var(--danger);">' + totalAbsent + '</div></div>' +
+          '<div class="kpi-card"><div class="kpi-label">On Leave</div><div class="kpi-value" style="color:var(--info);">' + totalOnLeave + '</div></div>' +
+          '</div>';
+      }).catch(function () {});
+    }
+
+    function loadLateArrivals(from, to) {
+      window.API.get('/api/reports/late-arrivals?start=' + from + '&end=' + to + '&page=0&size=50').then(function (data) {
+        var panel = document.querySelector('[data-panel="late"]');
+        if (!panel) return;
+        var list = data.content || [];
+        var tbody = document.getElementById('lateTbody');
+        if (!tbody) return;
+        tbody.style.display = '';
+        if (list.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:var(--space-xl);">No late arrivals</td></tr>';
+          return;
+        }
+        tbody.innerHTML = list.map(function (r) {
+          var initials = (r.employeeName || '').split(' ').map(function(p){return p[0]}).join('').slice(0,2).toUpperCase();
+          var checkIn = r.checkInTime ? r.checkInTime.substring(11, 16) : '—';
+          var date = r.date || '';
+          return '<tr><td><div class="emp-cell"><span class="emp-avatar">' + initials +
+            '</span><div><div class="emp-name">' + escapeHtml(r.employeeName || '') + '</div></div></div></td>' +
+            '<td>' + date + '</td>' +
+            '<td>' + checkIn + '</td>' +
+            '<td>' + escapeHtml(r.minutesLate || '') + '</td></tr>';
+        }).join('');
+      }).catch(function () {});
+    }
+
+    function loadAbsences(from, to) {
+      window.API.get('/api/reports/absences?start=' + from + '&end=' + to + '&page=0&size=50').then(function (data) {
+        var panel = document.querySelector('[data-panel="absences"]');
+        if (!panel) return;
+        var list = data.content || [];
+        var tbody = document.getElementById('absencesTbody');
+        if (!tbody) return;
+        tbody.style.display = '';
+        if (list.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:var(--space-xl);">No absences</td></tr>';
+          return;
+        }
+        tbody.innerHTML = list.map(function (r) {
+          var initials = (r.employeeName || '').split(' ').map(function(p){return p[0]}).join('').slice(0,2).toUpperCase();
+          return '<tr><td><div class="emp-cell"><span class="emp-avatar">' + initials +
+            '</span><div><div class="emp-name">' + escapeHtml(r.employeeName || '') + '</div></div></div></td>' +
+            '<td>' + (r.date || '') + '</td>' +
+            '<td>' + escapeHtml(r.departmentName || '') + '</td>' +
+            '<td><span class="status-badge status-badge--absent">Absent</span></td></tr>';
+        }).join('');
+      }).catch(function () {});
+    }
+
+    function loadDeptStats(from, to) {
+      window.API.get('/api/reports/departments?start=' + from + '&end=' + to + '&page=0&size=50').then(function (data) {
+        var panel = document.querySelector('[data-panel="dept"]');
+        if (!panel) return;
+        var list = data.content || [];
+        var chart = panel.querySelector('.bar-chart');
+        if (!chart) return;
+        var maxVal = 1;
+        list.forEach(function (d) {
+          var total = (d.present || 0) + (d.late || 0) + (d.absent || 0) + (d.halfDay || 0) + (d.onLeave || 0);
+          if (total > maxVal) maxVal = total;
+        });
+        if (list.length === 0) {
+          chart.innerHTML = '<div style="text-align:center;color:var(--muted);padding:var(--space-xl);">No data</div>';
+          return;
+        }
+        chart.innerHTML = list.map(function (d) {
+          var total = (d.present || 0) + (d.late || 0) + (d.absent || 0) + (d.halfDay || 0) + (d.onLeave || 0);
+          var pct = maxVal > 0 ? Math.round((total / maxVal) * 100) : 0;
+          return '<div class="bar-row">' +
+            '<span class="bar-label">' + escapeHtml(d.departmentName || '') + '</span>' +
+            '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:var(--primary);"></div></div>' +
+            '<span class="bar-value">' + total + '</span></div>';
+        }).join('');
+      }).catch(function () {});
+    }
+
+    function escapeHtml(str) {
+      var d = document.createElement('div');
+      d.appendChild(document.createTextNode(str || ''));
+      return d.innerHTML;
+    }
+
+    // ── Init ──
+    (function () {
+      if (!window.AuthAPI || !window.AuthAPI.isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+      }
+      var _role = window.AuthAPI.getRole();
+      document.querySelectorAll('.emp-only').forEach(function (el) { el.style.display = _role === 'EMPLOYEE' ? '' : 'none'; });
+      document.querySelectorAll('.admin-only').forEach(function (el) { el.style.display = (_role === 'SUPER_ADMIN' || _role === 'HR_MANAGER') ? '' : 'none'; });
+      var firstDate = document.querySelector('.filters-bar input[type="date"]');
+      if (firstDate) firstDate.value = monthStartStr();
+      var dates = document.querySelectorAll('.filters-bar input[type="date"]');
+      if (dates[1]) dates[1].value = todayStr();
+      loadTab('daily');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departments — Attendance Management</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header"><div class="sidebar-logo">A</div><span class="sidebar-title">AttendPro</span></div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-label">Main</div>
+        <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+        <a href="employees.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Employees</a>
+        <a href="attendance.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>Attendance</a>
+        <a href="leaves.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>Leaves<span class="nav-badge">2</span></a>
+        <div class="sidebar-section-label">Management</div>
+        <a href="qr-sessions.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>QR Sessions</a><a href="qr-scanner.html" class="nav-item emp-only" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>QR Check-in</a>
+        <a href="reports.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>Reports</a>
+        <a href="departments.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Departments</a>
+        <div class="sidebar-section-label">Account</div>
+        <a href="settings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      </nav>
+      <div class="sidebar-footer"><a href="#" onclick="AuthAPI.logout(); return false;" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>Logout</a></div>
+    </aside>
+
+    <div class="main-area">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="sidebar-toggle sidebar-toggle-mobile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/></svg></button>
+          <button class="sidebar-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" x2="15" y1="3" y2="3"/></svg></button>
+          <span class="page-title">Departments &amp; Schedules</span>
+        </div>
+        <div class="header-right">
+          <div style="position:relative;"><button class="bell-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="bell-badge">3</span></button></div>
+          <div class="user-avatar">AU</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);">
+
+          <!-- Departments -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Departments</span>
+              <button class="btn btn-sm btn-primary" onclick="openModal('deptModal')">+ Add</button>
+            </div>
+            <div class="card-body" style="padding:0;">
+              <div class="data-table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Name</th><th class="cell-actions" style="justify-content:flex-end;">Actions</th></tr></thead>
+                  <tbody id="deptTableBody" style="display:none">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedules -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Work Schedules</span>
+              <button class="btn btn-sm btn-primary" onclick="openModal('schedModal')">+ Add</button>
+            </div>
+            <div class="card-body" style="padding:0;">
+              <div class="data-table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Name</th><th>Start</th><th>End</th><th>Late After</th><th style="text-align:right;">Actions</th></tr></thead>
+                  <tbody id="schedTableBody" style="display:none">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Department Modal -->
+  <div class="modal-overlay" id="deptModal">
+    <div class="modal">
+      <div class="modal-header"><span class="modal-title">Add Department</span><button class="modal-close" onclick="closeModal('deptModal')">&times;</button></div>
+      <div class="modal-body">
+        <div class="form-group"><label class="form-label">Department Name</label><input class="form-input" placeholder="e.g. Design" /></div>
+        <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" placeholder="Optional description" style="min-height:60px;"></textarea></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal('deptModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="closeModal('deptModal');showToast('Department added','success')">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Schedule Modal -->
+  <div class="modal-overlay" id="schedModal">
+    <div class="modal">
+      <div class="modal-header"><span class="modal-title">Add Work Schedule</span><button class="modal-close" onclick="closeModal('schedModal')">&times;</button></div>
+      <div class="modal-body">
+        <div class="form-group"><label class="form-label">Schedule Name</label><input class="form-input" placeholder="e.g. Evening (2-10)" /></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+          <div class="form-group"><label class="form-label">Start Time</label><input class="form-input" type="time" /></div>
+          <div class="form-group"><label class="form-label">End Time</label><input class="form-input" type="time" /></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+          <div class="form-group"><label class="form-label">Late After (min)</label><input class="form-input" type="number" value="15" /></div>
+          <div class="form-group"><label class="form-label">Half-day After (min)</label><input class="form-input" type="number" value="240" /></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal('schedModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="closeModal('schedModal');showToast('Schedule added','success')">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/api/client.js"></script>
+  <script src="js/api/auth.js"></script>
+  <script>
+    (function () {
+      if (!window.AuthAPI || !window.AuthAPI.isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      var _role = window.AuthAPI.getRole();
+      document.querySelectorAll('.emp-only').forEach(function (el) { el.style.display = _role === 'EMPLOYEE' ? '' : 'none'; });
+      document.querySelectorAll('.admin-only').forEach(function (el) { el.style.display = (_role === 'SUPER_ADMIN' || _role === 'HR_MANAGER') ? '' : 'none'; });
+
+      var editingDeptId = null;
+      var editingSchedId = null;
+
+      // ── Departments ──
+
+      function loadDepartments() {
+        window.API.get('/api/departments').then(function (data) {
+          if (!data) return;
+          var rows = data.content || data;
+          var tbody = document.getElementById('deptTableBody');
+          if (!tbody) return;
+          tbody.style.display = '';
+          if (!rows || !rows.length) {
+            tbody.innerHTML = '<tr><td colspan="2" style="text-align:center;padding:2rem;color:var(--muted);">No departments</td></tr>';
+            return;
+          }
+          tbody.innerHTML = rows.map(function (d) {
+            return '<tr>' +
+              '<td><strong>' + escapeHtml(d.name) + '</strong><br><small style="color:var(--muted);">' + escapeHtml(d.description || '') + '</small></td>' +
+              '<td class="cell-actions">' +
+                '<button class="btn btn-sm btn-ghost" data-edit-dept="' + d.id + '">Edit</button>' +
+                '<button class="btn btn-sm btn-ghost" style="color:var(--danger);" data-delete-dept="' + d.id + '">Delete</button>' +
+              '</td></tr>';
+          }).join('');
+          attachDeptHandlers();
+        }).catch(function () {});
+      }
+
+      function attachDeptHandlers() {
+        document.querySelectorAll('[data-edit-dept]').forEach(function (btn) {
+          btn.onclick = function () {
+            var id = parseInt(this.getAttribute('data-edit-dept'));
+            editingDeptId = id;
+            window.API.get('/api/departments/' + id).then(function (d) {
+              if (!d) return;
+              var modal = document.getElementById('deptModal');
+              modal.querySelector('.modal-title').textContent = 'Edit Department';
+              modal.querySelector('input').value = d.name || '';
+              var desc = modal.querySelector('textarea');
+              if (desc) desc.value = d.description || '';
+              modal.querySelector('.btn-primary').textContent = 'Update';
+              window.openModal('deptModal');
+            });
+          };
+        });
+        document.querySelectorAll('[data-delete-dept]').forEach(function (btn) {
+          btn.onclick = function () {
+            var id = parseInt(this.getAttribute('data-delete-dept'));
+            if (confirm('Delete this department?')) {
+              window.API.del('/api/departments/' + id).then(function () {
+                showToast('Department deleted', 'success');
+                loadDepartments();
+              }).catch(function (e) {
+                showToast(e.message || 'Cannot delete — employees may be assigned', 'error');
+              });
+            }
+          };
+        });
+      }
+
+      // ── Work Schedules ──
+
+      function loadSchedules() {
+        window.API.get('/api/schedules').then(function (data) {
+          if (!data) return;
+          var rows = data.content || data;
+          var tbody = document.getElementById('schedTableBody');
+          if (!tbody) return;
+          tbody.style.display = '';
+          if (!rows || !rows.length) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--muted);">No work schedules</td></tr>';
+            return;
+          }
+          tbody.innerHTML = rows.map(function (s) {
+            return '<tr>' +
+              '<td><strong>' + escapeHtml(s.name) + '</strong></td>' +
+              '<td>' + (s.startTime || '') + '</td>' +
+              '<td>' + (s.endTime || '') + '</td>' +
+              '<td>' + (s.lateAfterMinutes || 0) + ' min</td>' +
+              '<td class="cell-actions">' +
+                '<button class="btn btn-sm btn-ghost" data-edit-sched="' + s.id + '">Edit</button>' +
+                '<button class="btn btn-sm btn-ghost" style="color:var(--danger);" data-delete-sched="' + s.id + '">Delete</button>' +
+              '</td></tr>';
+          }).join('');
+          attachSchedHandlers();
+        }).catch(function () {});
+      }
+
+      function attachSchedHandlers() {
+        document.querySelectorAll('[data-edit-sched]').forEach(function (btn) {
+          btn.onclick = function () {
+            var id = parseInt(this.getAttribute('data-edit-sched'));
+            editingSchedId = id;
+            window.API.get('/api/schedules/' + id).then(function (s) {
+              if (!s) return;
+              var modal = document.getElementById('schedModal');
+              modal.querySelector('.modal-title').textContent = 'Edit Work Schedule';
+              var inputs = modal.querySelectorAll('input');
+              if (inputs[0]) inputs[0].value = s.name || '';
+              if (inputs[1]) inputs[1].value = s.startTime || '';
+              if (inputs[2]) inputs[2].value = s.endTime || '';
+              if (inputs[3]) inputs[3].value = s.lateAfterMinutes || 15;
+              if (inputs[4]) inputs[4].value = s.halfDayAfterMinutes || 240;
+              modal.querySelector('.btn-primary').textContent = 'Update';
+              window.openModal('schedModal');
+            });
+          };
+        });
+        document.querySelectorAll('[data-delete-sched]').forEach(function (btn) {
+          btn.onclick = function () {
+            var id = parseInt(this.getAttribute('data-delete-sched'));
+            if (confirm('Delete this work schedule?')) {
+              window.API.del('/api/schedules/' + id).then(function () {
+                showToast('Schedule deleted', 'success');
+                loadSchedules();
+              }).catch(function () {});
+            }
+          };
+        });
+      }
+
+      // ── Modal Save Handlers ──
+
+      var deptSaveBtn = document.querySelector('#deptModal .btn-primary');
+      if (deptSaveBtn) {
+        deptSaveBtn.onclick = function () {
+          var modal = document.getElementById('deptModal');
+          var name = modal.querySelector('input').value.trim();
+          if (!name) { showToast('Department name is required', 'error'); return; }
+          var desc = modal.querySelector('textarea');
+          var body = { name: name, description: desc ? desc.value.trim() : '' };
+          var promise = editingDeptId
+            ? window.API.put('/api/departments/' + editingDeptId, body)
+            : window.API.post('/api/departments', body);
+          promise.then(function () {
+            showToast(editingDeptId ? 'Department updated' : 'Department added', 'success');
+            window.closeModal('deptModal');
+            resetDeptModal();
+            loadDepartments();
+          }).catch(function () {});
+        };
+      }
+
+      var schedSaveBtn = document.querySelector('#schedModal .btn-primary');
+      if (schedSaveBtn) {
+        schedSaveBtn.onclick = function () {
+          var modal = document.getElementById('schedModal');
+          var inputs = modal.querySelectorAll('input');
+          var name = inputs[0] ? inputs[0].value.trim() : '';
+          if (!name) { showToast('Schedule name is required', 'error'); return; }
+          var body = {
+            name: name,
+            startTime: inputs[1] ? inputs[1].value : '',
+            endTime: inputs[2] ? inputs[2].value : '',
+            lateAfterMinutes: inputs[3] ? parseInt(inputs[3].value) || 15 : 15,
+            halfDayAfterMinutes: inputs[4] ? parseInt(inputs[4].value) || 240 : 240
+          };
+          var promise = editingSchedId
+            ? window.API.put('/api/schedules/' + editingSchedId, body)
+            : window.API.post('/api/schedules', body);
+          promise.then(function () {
+            showToast(editingSchedId ? 'Schedule updated' : 'Schedule added', 'success');
+            window.closeModal('schedModal');
+            resetSchedModal();
+            loadSchedules();
+          }).catch(function () {});
+        };
+      }
+
+      function resetDeptModal() {
+        editingDeptId = null;
+        var modal = document.getElementById('deptModal');
+        modal.querySelector('.modal-title').textContent = 'Add Department';
+        modal.querySelector('input').value = '';
+        var desc = modal.querySelector('textarea');
+        if (desc) desc.value = '';
+        modal.querySelector('.btn-primary').textContent = 'Save';
+      }
+
+      function resetSchedModal() {
+        editingSchedId = null;
+        var modal = document.getElementById('schedModal');
+        modal.querySelector('.modal-title').textContent = 'Add Work Schedule';
+        var inputs = modal.querySelectorAll('input');
+        if (inputs[0]) inputs[0].value = '';
+        if (inputs[1]) inputs[1].value = '';
+        if (inputs[2]) inputs[2].value = '';
+        if (inputs[3]) inputs[3].value = 15;
+        if (inputs[4]) inputs[4].value = 240;
+        modal.querySelector('.btn-primary').textContent = 'Save';
+      }
+
+      function escapeHtml(str) {
+        var d = document.createElement('div');
+        d.appendChild(document.createTextNode(str || ''));
+        return d.innerHTML;
+      }
+
+      // ── Init ──
+      loadDepartments();
+      loadSchedules();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "attendance.html",
+  "entry": "attendance.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-28T17:57:50.191Z",
+  "updatedAt": "2026-06-28T17:57:50.191Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

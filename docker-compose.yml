@@ -1,0 +1,57 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: attendance-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:-Root@2026#}
+      MYSQL_DATABASE: ${DB_NAME:-attendance_db}
+      MYSQL_USER: ${DB_USER:-attendance_user}
+      MYSQL_PASSWORD: ${DB_PASS:-Attendance@2026#}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: attendance-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: ./backend
+    container_name: attendance-api
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-attendance_db}
+      DB_USER: ${DB_USER:-attendance_user}
+      DB_PASS: ${DB_PASS:-Attendance@2026#}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET:-your-256-bit-secret-key-here-make-it-long}
+      QR_HMAC_SECRET: ${QR_HMAC_SECRET:-change-me-qr-hmac-secret-32-chars-min!!}
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql-data:
