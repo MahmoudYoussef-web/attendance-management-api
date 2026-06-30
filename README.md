@@ -256,6 +256,12 @@ Three roles enforced at the method level via `@PreAuthorize`:
   <img src="https://github.com/user-attachments/assets/358a2b16-202a-47b3-880f-5abfa79b8574" width="700"/>
 </p>
 
+### Sample: QR Session Generation
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/18ef0bfa-cba8-467a-855e-78e2e14e3834" width="800"/>
+</p>
+
 ---
 
 ## 🗄️ Database Schema
